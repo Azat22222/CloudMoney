@@ -18,16 +18,6 @@ def index():
 def user(username):
     return render_template('user.html', username=username)
 
-
-@app.route('/update_profile', methods=['POST'])
-def update_profile():
-    if request.method == 'POST':
-        # Обновляем данные пользователя (здесь просто пример)
-        user_data['username'] = request.form['username']
-        user_data['email'] = request.form['email']
-        return redirect(url_for('user', username=user_data['username']))
-
-
 @app.route('/map')
 def map():
     return render_template("map.html")
@@ -81,4 +71,4 @@ def settings():
     return render_template('settings.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug='0.0.0.0')
