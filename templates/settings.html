@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Cabinet{% endblock %}
+
+{% block content %}
+    <body>
+    <h1>Settings</h1>
+
+    <!-- Форма для изменения информации о пользователе -->
+    <h2>Edit Profile</h2>
+    <form action="/update_profile" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label for="birthdate">Date of Birth:</label>
+        <input type="date" id="birthdate" name="birthdate" required><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <!-- Форма для добавления способа оплаты -->
+    <h2>Add Payment Method</h2>
+    <form action="/add_payment_method" method="POST">
+        <label for="payment_method">Payment Method:</label>
+        <input type="text" id="payment_method" name="payment_method" required><br>
+
+        <!-- Здесь можно добавить дополнительные поля для ввода данных способа оплаты, если необходимо -->
+
+        <button type="submit">Add Payment Method</button>
+    </form>
+</body>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}User Page{% endblock %}
+
+{% block content %}
+     <h1>Wallet</h1>
+
+    <!-- Форма для отображения информации о верификации аккаунта -->
+    <h2>Account Verification</h2>
+    {% if account_verified %}
+        <p>Your account is verified.</p>
+    {% else %}
+        <p>Your account is not verified. Please provide your passport details:</p>
+        <form action="/verify_account" method="POST">
+            <label for="passport_number">Passport Number:</label>
+            <input type="text" id="passport_number" name="passport_number" required>
+            <button type="submit">Verify Account</button>
+        </form>
+    {% endif %}
+
+    <!-- Отображение текущего баланса -->
+    <h2>Current Balance</h2>
+    <p>Your current balance: ${{ current_balance }}</p>
+
+    <!-- Форма для выбора типа вклада -->
+    <h2>Choose Deposit Type</h2>
+    <form action="/deposit" method="POST">
+        <input type="radio" id="deposit_type_1" name="deposit_type" value="type_1">
+        <label for="deposit_type_1">Type 1: 5% interest for 6 months</label><br>
+        <input type="radio" id="deposit_type_2" name="deposit_type" value="type_2">
+        <label for="deposit_type_2">Type 2: 7% interest for 12 months</label><br>
+        <input type="radio" id="deposit_type_3" name="deposit_type" value="type_3">
+        <label for="deposit_type_3">Type 3: 10% interest for 24 months</label><br>
+        <input type="radio" id="deposit_type_4" name="deposit_type" value="type_4">
+        <label for="deposit_type_4">Type 4: 12% interest for 36 months</label><br>
+        <button type="submit">Deposit</button>
+    </form>
+{% endblock %}
