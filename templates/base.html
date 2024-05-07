@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/fontello.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar bg-custom my-2 my-md-0 list-unstyled text-custom navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand text-custom" href="#">
+      <img src="/static/img/money112.jpeg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+      Moneycloud
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-target="#navbarContent" data-toggle="collapse" aria-controls="navbarContent" aria-expand="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <li class="menu nav-item">
+        <a class="nav-link"  href="/map">Map</a>
+    </li>
+    <li class="menu nav-item">
+        <a class="nav-link"  href="/history">History</a>
+    </li>
+    <li class="menu nav-item">
+        <a class="nav-link"  href="/news">News</a>
+    </li>
+    <li class="menu nav-item">
+        <a class="nav-link"  href="/quarante">Quarante and safe</a>
+    </li>
+    <li class="menu nav-item">
+        {% if user  %}
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle " href="#" role="button">
+                NameUser
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/cabinet">cabinet</a></li>
+                <li><a class="dropdown-item" href="/wallets">wallet</a></li>
+                <li><a class="dropdown-item" href="/settings">setting</a></li>
+            </ul>
+        </div>
+        {% else %}
+        <a class="nav-link" aria-current="page" href="registr.html">Registration</a>
+        {% endif %}
+    </li>
+  </div>
+</nav>
+<script src="/static/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='static/js/photo.js') }}">
+       // Получаем текущий URL страницы
+    var currentUrl = window.location.href;
+
+    // Проверяем, содержит ли URL адрес "/user/John"
+    if (currentUrl.includes("/user/John")) {
+        // Находим элемент меню
+        var menuElement = document.querySelector('.menu');
+
+        // Изменяем содержимое меню, если URL содержит "/user/John"
+        if (menuElement) {
+            menuElement.innerHTML = `
+                <div class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button">
+                        NameUser
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/cabinet">Cabinet</a></li>
+                        <li><a class="dropdown-item" href="/wallets">Wallet</a></li>
+                        <li><a class="dropdown-item" href="/settings">Setting</a></li>
+                    </ul>
+                </div>
+            `;
+        }
+    }
+</script>
+</body>
+
+
+<section>
+    {% block content %}
+        <div class="container breakpoints">
+            <section class="name row">
+                <div class="color-changing-text col-12">
+                    <h1 class="text-center text-custom">Save, increase, protect your savings!</h1>
+                </div>
+            </section>
+            <section class="tree1 row">
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+            </section>
+            <section class="tree2 row">
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+                <div class="col-1"></div>
+            </section>
+
+        </div>
+    {% endblock %}
+</section>
+  <footer>
+      <div class="container breakpoints">
+          <section class="links row">
+              <div class="col-md-1 col-sm-4 col-xs-4">
+                  <i class="icon-telegram"><img src="/static/img/telegram.png" width="30" height="30"></i>
+              </div>
+              <div class="col-md-1 col-sm-4 col-xs-4">
+                  <i class="icon-instagrams"><img src="/static/img/instagram.png" width="30" height="30"></i>
+              </div>
+              <div class="col-md-1 col-sm-4 col-xs-4">
+                  <i class="icon-githubs"><img src="/static/img/github.png" width="30" height="30"></i>
+              </div>
+              <div class="col-md-1 col-sm-4 col-xs-4">
+                  <i class="icon-helps"><img src="/static/img/help.png" width="30" height="30"></i>
+              </div>
+              <div class="col-md-1 col-sm-4 col-xs-4">
+                  <i class="icon-youtube-plays"><img src="/static/img/youtube.png" width="30" height="30"></i>
+              </div>
+              <div class="col-md-1 col-sm-6">
+
+              </div>
+              <div class="col-md-1 col-sm-6">
+
+              </div>
+              <div class="col-md-1 col-sm-6">
+
+              </div>
+              <div class="col-md-2 col-sm-6 col-xs-4">
+                 <div class="btn-group dropstart m-0 p-0">
+                     <button type="button" class="btn btn-secondary dropdown-toggle btn-sm bg-transparent border-0 text-custom text-custom:hover" data-bs-toggle="dropdown" aria-expanded="false">
+                         <img src="/static/img/language.png" width="20" height="20">
+                     </button>
+                     <ul class="dropdown-menu bg-transparent">
+                         <li><a class="dropdown-item m-0 p-0" href="#">
+                             <img src="/static/img/russia.png" width="20" height="20"> Русский
+                         </a></li>
+                         <li><a class="dropdown-item m-0 p-0" href="#">
+                             <img src="/static/img/english.png" width="20" height="20"> English
+                         </a></li>
+                         <li><a class="dropdown-item m-0 p-0" href="#">
+                             <img src="/static/img/deutch.png" width="20" height="20"> Uzbek
+                         </a></li>
+                     </ul>
+                 </div>
+              </div>
+
+              <div class="Useragreement col-md-1 col-sm-6 col-xs-4">
+                  <a href="#">User Agreement</a>
+              </div>
+
+              <div class="rights col-md-1 col-sm-6 col-xs-4">
+                  <a>Rights</a>
+              </div>
+
+          </section>
+      </div>
+  </footer>
+
+</html>

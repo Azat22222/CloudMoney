@@ -1,0 +1,23 @@
+/* custom.css */
+.bg-custom {
+    background-color: #4f9d61; /* Замените #your-color на свой цвет */
+}
+.text-custom{
+    color: #feea91;
+}
+
+.text-custom:hover{
+    color: #feea91;
+}
+
+.text-custom:focus{
+    color: #feea91;
+}
+
+.text-custom:active{
+    color: #feea91;
+}
+
+.text-custom1{
+    color: #0a5616;
+}
